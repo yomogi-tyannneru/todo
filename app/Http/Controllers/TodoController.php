@@ -27,4 +27,22 @@ class TodoController extends Controller
         DB::insert('insert into todos (name, age, nationality) values (:name, :age, :nationality)', $param);
         return redirect('/');
     }
+    //更新
+    public function edit(Request $request)
+    {
+        $param = ['id' => $request->id];
+        $item = DB::select('select * from todos where id = :id', $param);
+        return view('edit', ['form' => $item[0]]);
+    }
+    public function update(Request $request)
+    {
+        $param = [
+            'id' => $request->id,
+            'name' => $request->name,
+            'age' => $request->age,
+            'nationality' => $request->nationality,
+        ];
+        DB::update('update todos set name =:name, age =:age, nationality =:nationality where id =:id', $param);
+        return redirect('/');
+    }
 }
