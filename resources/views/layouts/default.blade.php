@@ -8,6 +8,7 @@
     body {
       font-size:16px;
       margin: 5px;
+      background-color: #191970;
     }
     .content {
       margin:10px; 
