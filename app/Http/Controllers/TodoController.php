@@ -20,11 +20,11 @@ class TodoController extends Controller
     public function create(Request $request)
     {
         $param = [
-            'name' => $request->name,
-            'age' => $request->age,
+            'content' => $request->content,
+            'created_at' => $request->created_at,
             'nationality' => $request->nationality,
         ];
-        DB::insert('insert into todos (name, age, nationality) values (:name, :age, :nationality)', $param);
+        DB::insert('insert into todos (content, created_at, updated_at) values (:content, :created_at, :updated_at)', $param);
         return redirect('/');
     }
     //更新
@@ -38,11 +38,24 @@ class TodoController extends Controller
     {
         $param = [
             'id' => $request->id,
-            'name' => $request->name,
-            'age' => $request->age,
-            'nationality' => $request->nationality,
+            'content' => $request->content,
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at,
         ];
-        DB::update('update todos set name =:name, age =:age, nationality =:nationality where id =:id', $param);
+        DB::update('update todos set content =:content, created_at =:created_at, updated_at =:updated_at where id =:id', $param);
+        return redirect('/');
+    }
+    //削除
+    public function delete(Request $request)
+    {
+        $param = ['id' => $request->id];
+        $item = DB::select('select * from todos where id = :id', $param);
+        return view('delete', ['form' => $item[0]]);
+    }
+    public function remove(Request $request)
+    {
+        $param = ['id' => $request->id];
+        DB::delete('delete from todos where id =:id', $param);
         return redirect('/');
     }
 }

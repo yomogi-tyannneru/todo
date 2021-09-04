@@ -14,15 +14,15 @@
       text-align: center;
     }
 </style>
-@section('title', 'index.blade.php')
+@section('title', 'Todo List')
 
 @section('content')
 <table>
   <tr>
-    <th>id</th>
-    <th>name</th>
-    <th>age</th>
-    <th>nationality</th>
+    <th>作成日</th>
+    <th>タスク名</th>
+    <th>更新</th>
+    <th>削除</th>
   </tr>
   @foreach ($items as $item)
   <tr>
