@@ -37,6 +37,20 @@
     border-radius: 30px;
 
   }
+  .btn {
+  display: block;
+  width: 160px;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border:1px solid #000;
+  border-radius: 30px;
+}
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
 
     
 </style>
@@ -68,6 +82,7 @@
       {{$item->content}}
     </td>
     <td>
+      <a href="#" class="btn">ボタン</a>
       {{$item->created_at}}
     </td>
     <td>

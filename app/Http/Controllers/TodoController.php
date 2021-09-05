@@ -9,7 +9,7 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $items = DB::select('select * from todos');
+        $items = Todo::all();
         return view('index', ['items' => $items]);
     }
     //追加
