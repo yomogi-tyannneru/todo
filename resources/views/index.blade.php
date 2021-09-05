@@ -81,7 +81,7 @@
 </form>
 @endsection
 
-section('content')
+@section('content')
 <form action="/edit" method="POST">
   <table>
     @csrf
@@ -90,7 +90,7 @@ section('content')
         id
       </th>
       <td>
-        <input type="text" name="id" value="{{$form->id}}">
+        <input type="text" name="id" value="{{$item->id}}">
       </td>
     </tr>
     <tr>
@@ -98,7 +98,7 @@ section('content')
         name
       </th>
       <td>
-        <input type="text" name="name" value="{{$form->name}}">
+        <input type="text" name="content" value="{{$item->content}}">
       </td>
     </tr>
     <tr>
@@ -106,7 +106,7 @@ section('content')
         age
       </th>
       <td>
-        <input type="text" name="age" value="{{$form->age}}">
+        <input type="text" name="created_at" value="{{$item->created_at}}">
       </td>
     </tr>
     <tr>
@@ -114,7 +114,7 @@ section('content')
         nationality
       </th>
       <td>
-        <input type="text" name="nationality" value="{{$form->nationality}}">
+        <input type="text" name="updated_at" value="{{$item->updated_at}}">
       </td>
     </tr>
     <tr>
@@ -136,7 +136,7 @@ section('content')
         id
       </th>
       <td>
-        <input type="text" name="id" value="{{$form->id}}">
+        <input type="text" name="id" value="{{$item->id}}">
       </td>
     </tr>
     <tr>
@@ -144,7 +144,7 @@ section('content')
         name
       </th>
       <td>
-        <input type="text" name="name" value="{{$form->name}}">
+        <input type="text" name="content" value="{{$item->content}}">
       </td>
     </tr>
     <tr>
@@ -152,7 +152,7 @@ section('content')
         age
       </th>
       <td>
-        <input type="text" name="age" value="{{$form->age}}">
+        <input type="text" name="created_at" value="{{$item->created_at}}">
       </td>
     </tr>
     <tr>
@@ -160,7 +160,7 @@ section('content')
         nationality
       </th>
       <td>
-        <input type="text" name="nationality" value="{{$form->nationality}}">
+        <input type="text" name="updated_at" value="{{$item->updated_at}}">
       </td>
     </tr>
     <tr>
