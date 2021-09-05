@@ -42,3 +42,133 @@
   @endforeach
 </table>
 @endsection
+
+@section('content')
+<form action="/create" method="POST">
+  <table>
+    @csrf
+    <tr>
+      <th>
+        作成日
+      </th>
+      <td>
+        <input type="text" name="content">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        タスク名
+      </th>
+      <td>
+        <input type="text" name="created_at">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        更新
+      </th>
+      <td>
+        <input type="text" name="updated_at">
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>
+        <button>送信</button>
+      </td>
+    </tr>
+  </table>
+</form>
+@endsection
+
+section('content')
+<form action="/edit" method="POST">
+  <table>
+    @csrf
+    <tr>
+      <th>
+        id
+      </th>
+      <td>
+        <input type="text" name="id" value="{{$form->id}}">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        name
+      </th>
+      <td>
+        <input type="text" name="name" value="{{$form->name}}">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        age
+      </th>
+      <td>
+        <input type="text" name="age" value="{{$form->age}}">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        nationality
+      </th>
+      <td>
+        <input type="text" name="nationality" value="{{$form->nationality}}">
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>
+        <button>送信</button>
+      </td>
+    </tr>
+  </table>
+</form>
+@endsection
+
+@section('content')
+<form action="/delete" method="POST">
+  <table>
+    @csrf
+    <tr>
+      <th>
+        id
+      </th>
+      <td>
+        <input type="text" name="id" value="{{$form->id}}">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        name
+      </th>
+      <td>
+        <input type="text" name="name" value="{{$form->name}}">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        age
+      </th>
+      <td>
+        <input type="text" name="age" value="{{$form->age}}">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        nationality
+      </th>
+      <td>
+        <input type="text" name="nationality" value="{{$form->nationality}}">
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>
+        <button>送信</button>
+      </td>
+    </tr>
+  </table>
+</form>
+@endsection
