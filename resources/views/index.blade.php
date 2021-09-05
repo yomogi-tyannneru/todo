@@ -1,35 +1,49 @@
-@extends('layouts.default')
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>test</title>
 <style>
-    th {
-      padding: 5px 40px;
-    }
-    tr:nth-child(odd) td{
-      background-color: #FFFFFF;
-    }
-    td {
-      padding: 25px 40px;
-      background-color: #EEEEEE;
-      text-align: center;
-    }
-    body {
-      font-size:16px;
-      margin: 5px;
-      background-color: #191970;
-    }
-    .content { 
-      width: 70%; 
-      margin: 100px auto 0;
-      
+  th {
+    padding: 5px 40px;
+  }
+  tr:nth-child(odd) td{
+    background-color: #FFFFFF;
+  }
+  td {
+    padding: 25px 40px;
+    background-color: #EEEEEE;
+    text-align: center;
+  }
+  body {
+    font-size:16px;
+    margin: 5px;
+    background-color: #191970;
+  }
+  .content { 
+    width: 70%; 
+    margin: 100px auto 0;
+    
 
-    }
-    .content1{
-      width: 70%;
-      height: 200px;
-      background: #fff;
-      border-radius: 30px;
+  }
+  .content1{
+    width: 70%;
+    height: 200px;
+    background: #fff;
+    border-radius: 30px;
 
-    }
+  }
+
+    
 </style>
+</head>
+
+<body>
+
 @section('content1')
 <div>a</div>
 <h1>b</h1>
@@ -199,3 +213,6 @@
   </table>
 </form>
 @endsection
+</body>
+
+</html>
