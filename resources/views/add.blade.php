@@ -5,7 +5,7 @@
       color: white;
       padding: 5px 40px;
     }
-    tr:nth-child(4) td{
+    tr:nth-child(odd) td{
       padding: 10px;
     }
     td {
@@ -23,34 +23,34 @@
       color: white;
     }
 </style>
-@section('title', 'add.blade.php')
+@section('title', 'Todo List')
 
 @section('content')
-<form action="/add" method="POST">
+<form action="/todo/create" method="POST">
   <table>
     @csrf
     <tr>
       <th>
-        name
+        作成日
       </th>
       <td>
-        <input type="text" name="name">
+        <input type="text" name="content">
       </td>
     </tr>
     <tr>
       <th>
-        age
+        タスク名
       </th>
       <td>
-        <input type="text" name="age">
+        <input type="text" name="created_at">
       </td>
     </tr>
     <tr>
       <th>
-        nationality
+        更新
       </th>
       <td>
-        <input type="text" name="nationality">
+        <input type="text" name="updated_at">
       </td>
     </tr>
     <tr>

@@ -30,13 +30,13 @@
       {{$item->id}}
     </td>
     <td>
-      {{$item->name}}
+      {{$item->content}}
     </td>
     <td>
-      {{$item->age}}
+      {{$item->created_at}}
     </td>
     <td>
-      {{$item->nationality}}
+      {{$item->updated_at}}
     </td>
   </tr>
   @endforeach

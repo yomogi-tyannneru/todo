@@ -22,7 +22,7 @@ class TodoController extends Controller
         $param = [
             'content' => $request->content,
             'created_at' => $request->created_at,
-            'nationality' => $request->nationality,
+            'updated_at' => $request->updated_at,
         ];
         DB::insert('insert into todos (content, created_at, updated_at) values (:content, :created_at, :updated_at)', $param);
         return redirect('/');
