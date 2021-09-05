@@ -10,12 +10,22 @@
       margin: 5px;
       background-color: #191970;
     }
-    .content {
-      margin:10px; 
+    .content { 
+      width: 70%; 
+      margin: 100px auto 0;
+      
+
+    }
+    .content1{
+      width: 70%;
+      height: 200px;
+      background: #fff;
+      border-radius: 30px;
+
     }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <h1>@yield('title')</h1>
     <div class="content">
     @yield('content')

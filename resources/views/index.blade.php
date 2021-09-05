@@ -1,8 +1,8 @@
+@section1('content1')
+
 @extends('layouts.default')
 <style>
     th {
-      background-color: #289ADC;
-      color: white;
       padding: 5px 40px;
     }
     tr:nth-child(odd) td{
@@ -17,6 +17,7 @@
 @section('title', 'Todo List')
 
 @section('content')
+
 <table>
   <tr>
     <th>作成日</th>
@@ -80,11 +81,13 @@
   </table>
 </form>
 @endsection
+@endsection1
 
 @section('content')
 <form action="/edit" method="POST">
   <table>
     @csrf
+    @foreach ($items as $item)
     <tr>
       <th>
         id
@@ -123,6 +126,7 @@
         <button>送信</button>
       </td>
     </tr>
+    @endforeach
   </table>
 </form>
 @endsection
@@ -131,6 +135,7 @@
 <form action="/delete" method="POST">
   <table>
     @csrf
+    @foreach ($items as $item)
     <tr>
       <th>
         id
@@ -169,6 +174,7 @@
         <button>送信</button>
       </td>
     </tr>
+    @endforeach
   </table>
 </form>
 @endsection
