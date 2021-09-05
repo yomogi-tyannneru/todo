@@ -1,5 +1,3 @@
-@section1('content1')
-
 @extends('layouts.default')
 <style>
     th {
@@ -13,8 +11,30 @@
       background-color: #EEEEEE;
       text-align: center;
     }
+    body {
+      font-size:16px;
+      margin: 5px;
+      background-color: #191970;
+    }
+    .content { 
+      width: 70%; 
+      margin: 100px auto 0;
+      
+
+    }
+    .content1{
+      width: 70%;
+      height: 200px;
+      background: #fff;
+      border-radius: 30px;
+
+    }
 </style>
+@section('content1')
+<div>a</div>
+<h1>b</h1>
 @section('title', 'Todo List')
+
 
 @section('content')
 
@@ -42,6 +62,7 @@
   </tr>
   @endforeach
 </table>
+@endsection
 @endsection
 
 @section('content')
@@ -81,7 +102,7 @@
   </table>
 </form>
 @endsection
-@endsection1
+
 
 @section('content')
 <form action="/edit" method="POST">
