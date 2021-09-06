@@ -57,14 +57,9 @@
 </head>
 
 <body>
-
-@section('content1')
-<div>a</div>
-<h1>b</h1>
-@section('title', 'Todo List')
+<a href="#" class="btn">ボタン</a>
 
 
-@section('content')
 
 <table>
   <tr>
@@ -82,6 +77,7 @@
       {{$item->content}}
     </td>
     <td>
+      <button>送信</button>
       <a href="#" class="btn">ボタン</a>
       {{$item->created_at}}
     </td>
@@ -91,8 +87,8 @@
   </tr>
   @endforeach
 </table>
-@endsection
-@endsection
+
+
 
 @section('content')
 <form action="/create" method="POST">
