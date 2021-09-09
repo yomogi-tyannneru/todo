@@ -37,6 +37,7 @@
   color: #9370DB;
   border:2px solid #9370DB;
   border-radius: 6px;
+  background: #fff;
 }
 .btn:hover {
   background: #9370DB;
@@ -91,9 +92,10 @@
 
 <body>
   <div class="card">
+    @csrf
     <div class="card__content">
       <div class="card__content-cat">Todo List</div>
-      <form action="/create" method="POST">
+      <form action="/todo/create" method="POST">
         <div class="form-item">
           <input type="text" name="contact" class="form-item-input">
           <input type="submit" name="submit" value="追加" class="btn"/>
