@@ -92,11 +92,11 @@
 
 <body>
   <div class="card">
-    @csrf
     <div class="card__content">
       <div class="card__content-cat">Todo List</div>
       <form action="/todo/create" method="POST">
         <div class="form-item">
+          @csrf
           <input type="text" name="contact" class="form-item-input">
           <input type="submit" name="submit" value="追加" class="btn"/>
         </div>
