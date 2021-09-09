@@ -70,7 +70,6 @@
 .card {
   margin: 250px auto 0;
   width: 55%;
-  height: 420px;
   background: #fff;
   border-radius: 10px;
       
