@@ -11,12 +11,8 @@
   th {
     padding: 5px 40px;
   }
-  tr:nth-child(odd) td{
-    background-color: #FFFFFF;
-  }
   td {
     padding: 25px 40px;
-    background-color: #EEEEEE;
     text-align: center;
   }
   body {
@@ -29,7 +25,7 @@
     margin: 100px auto 0;
   }
 
-  .btn {
+.btn {
   display: block;
   width: 80px;
   text-align: center;
@@ -41,6 +37,34 @@
 }
 .btn:hover {
   background: #9370DB;
+  color: #fff;
+}
+.btn1 {
+  display: block;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  color: 	#FF7F50;
+  border:2px solid 	#FF7F50;
+  border-radius: 6px;
+  background: #fff;
+}
+.btn1:hover {
+  background: 	#FF7F50;
+  color: #fff;
+}
+.btn2 {
+  display: block;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  color: #00FFFF;
+  border:2px solid #00FFFF;
+  border-radius: 6px;
+  background: #fff;
+}
+.btn2:hover {
+  background: #00FFFF;
   color: #fff;
 }
 .card {
@@ -115,21 +139,35 @@
               {{$item->id}}
             </td>
             <td>
+              <form action="/todo/update" method="POST">
+                <div class="form-item">
+                @csrf
+                <input type="text" name="content" class="form-item-input">
+                </div>
+              </form>
               {{$item->content}}
             </td>
             <td>
-              <button>送信</button>
-              <a href="#" class="btn">ボタン</a>
+              <form action="/todo/update" method="POST">
+                <div class="form-item">
+                @csrf
+                <input type="submit" name="content" value="更新" class="btn1"/>
+                </div>
+              </form>
               {{$item->created_at}}
             </td>
             <td>
+              <form action="/todo/delete" method="POST">
+                <div class="form-item">
+                @csrf
+                <input type="submit" name="content" value="削除" class="btn2"/>
+                </div>
+              </form>
               {{$item->updated_at}}
             </td>
           </tr>
           @endforeach
         </table>
-        <a href="#" class="btn">ボタン</a>
-
       </div>
     </div>
   </div>
@@ -140,43 +178,7 @@
 
 
 
-@section('content')
-<form action="/create" method="POST">
-  <table>
-    @csrf
-    <tr>
-      <th>
-        作成日
-      </th>
-      <td>
-        <input type="text" name="content">
-      </td>
-    </tr>
-    <tr>
-      <th>
-        タスク名
-      </th>
-      <td>
-        <input type="text" name="created_at">
-      </td>
-    </tr>
-    <tr>
-      <th>
-        更新
-      </th>
-      <td>
-        <input type="text" name="updated_at">
-      </td>
-    </tr>
-    <tr>
-      <th></th>
-      <td>
-        <button>送信</button>
-      </td>
-    </tr>
-  </table>
-</form>
-@endsection
+
 
 
 @section('content')
