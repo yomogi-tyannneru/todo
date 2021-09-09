@@ -11,7 +11,7 @@ class CreateTodosTable extends Migration
      *
      * @return void
      */
-   public function up()
+    public function up()
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
