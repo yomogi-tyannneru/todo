@@ -26,7 +26,6 @@ class TodoController extends Controller
             'updated_at' => $request->updated_at,
         ];
         DB::insert('insert into todos (content, created_at, updated_at) values (:content, :created_at, :updated_at)', $param);
-        dd($request->all());　　　//追記
         return redirect('/');
     }
     //更新
