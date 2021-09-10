@@ -121,7 +121,7 @@
         <div class="form-item">
           @csrf
           <input type="text" name="content" class="form-item-input">
-          <input type="submit" name="content" value="追加" class="btn"/>
+          <input type="submit" value="追加" class="btn"/>
         </div>
       </form>
     </div>
