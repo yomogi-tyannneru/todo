@@ -142,9 +142,10 @@
                 <div class="form-item">
                 @csrf
                 <input type="text" name="content" class="form-item-input">
+                {{$item->content}}
                 </div>
               </form>
-              {{$item->content}}
+              
             </td>
             <td>
               <form action="/todo/update" method="POST">

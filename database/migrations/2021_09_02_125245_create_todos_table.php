@@ -14,10 +14,12 @@ class CreateTodosTable extends Migration
     public function up()
     {
         Schema::create('todos', function (Blueprint $table) {
-            $table->id();
-            $table->string('content', 100);
-            $table->timestamp('created_at')->useCurrent()->nullable();
-            $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->bigInteger('id',20)->nullable(false)->change();
+            $table->string('content', 191)->nullable(false)->change();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+
+            $table->primary(['id']);
         });
     }
 
@@ -29,5 +31,6 @@ class CreateTodosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('todos');
+        $table->bigInteger('id')->default(null)->change();
     }
 }
