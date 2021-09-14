@@ -19,7 +19,7 @@ class CreateTodosTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
 
-            $table->primary(['id']);
+            
         });
     }
 
@@ -31,6 +31,5 @@ class CreateTodosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('todos');
-        $table->bigInteger('id')->default(null)->change();
     }
 }
