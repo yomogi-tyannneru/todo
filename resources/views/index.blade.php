@@ -135,7 +135,7 @@
           @foreach ($items as $item)
           <tr>
             <td>
-              {{$item->id}}
+              {{$item->created_at}}
             </td>
             <td>
               <form action="/todo/update" method="POST">
@@ -154,7 +154,7 @@
                 <input type="submit" name="content" value="更新" class="btn1"/>
                 </div>
               </form>
-              {{$item->created_at}}
+              
             </td>
             <td>
               <form action="/todo/delete" method="POST">
@@ -163,7 +163,7 @@
                 <input type="submit" name="content" value="削除" class="btn2"/>
                 </div>
               </form>
-              {{$item->updated_at}}
+              
             </td>
           </tr>
           @endforeach
@@ -171,6 +171,7 @@
       </div>
     </div>
   </div>
+  
 
 
 
@@ -191,7 +192,7 @@
         id
       </th>
       <td>
-        <input type="text" name="id" value="{{$item->id}}">
+        {{$item->updated_at}}
       </td>
     </tr>
     <tr>

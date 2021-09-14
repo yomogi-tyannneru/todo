@@ -14,10 +14,6 @@ class TodoController extends Controller
         return view('index', ['items' => $items]);
     }
     //追加
-    public function add()
-    {
-        return view('add');
-    }
     public function create(Request $request)
     {
         $param = [
