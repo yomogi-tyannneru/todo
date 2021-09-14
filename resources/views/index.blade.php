@@ -8,11 +8,31 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>test</title>
 <style>
-  th {
-    padding: 5px 40px;
+  .t{
+    display: flex;
+    justify-content: center;
   }
-  td {
-    padding: 25px 40px;
+  .karamu1 {
+    padding: 5px 10px;
+    
+  }
+  .karamu2 {
+    padding: 5px 10px;
+  }
+  .karamu3 {
+    padding: 5px 10px;
+  }
+  .data1 {
+    padding: 0px 10px;
+    text-align: center;
+    background-color: red;
+  }
+  .data2 {
+    padding: 0px 10px;
+    text-align: center;
+  }
+  .data3 {
+    padding: 0px 10px;
     text-align: center;
   }
   body {
@@ -27,7 +47,7 @@
 
 .btn {
   display: block;
-  width: 80px;
+  width: 60px;
   text-align: center;
   text-decoration: none;
   color: #9370DB;
@@ -41,13 +61,14 @@
 }
 .btn1 {
   display: block;
-  width: 80px;
+  width: 60px;
   text-align: center;
   text-decoration: none;
   color: 	#FF7F50;
   border:2px solid 	#FF7F50;
   border-radius: 6px;
   background: #fff;
+  padding: 5px;
 }
 .btn1:hover {
   background: 	#FF7F50;
@@ -55,13 +76,14 @@
 }
 .btn2 {
   display: block;
-  width: 80px;
+  width: 60px;
   text-align: center;
   text-decoration: none;
   color: #00FFFF;
   border:2px solid #00FFFF;
   border-radius: 6px;
   background: #fff;
+  padding: 5px;
 }
 .btn2:hover {
   background: #00FFFF;
@@ -109,6 +131,14 @@
   width: 75%;
   font-size: 18px;
 }
+.form-item-input1 {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 10px;
+  height: 25px;
+  width: 75%;
+  font-size: 18px;
+}
     
 </style>
 </head>
@@ -125,29 +155,29 @@
         </div>
       </form>
     </div>
-        <table >
+        <table class="t">
           <tr>
-            <th>作成日</th>
-            <th>タスク名</th>
-            <th>更新</th>
-            <th>削除</th>
+            <th class="karamu1">作成日</th>
+            <th class="karamu2">タスク名</th>
+            <th class="karamu3">更新</th>
+            <th class="karamu3">削除</th>
           </tr>
           @foreach ($items as $item)
           <tr>
-            <td>
+            <td class="data1">
               {{$item->created_at}}
             </td>
-            <td>
+            <td class="data2">
               <form action="/todo/update" method="POST">
                 <div class="form-item">
                 @csrf
-                <input type="text" name="content" class="form-item-input">
-                {{$item->content}}
+                <input type="text" name="content" value="{{$item->content}}" class="form-item-input1">
+                
                 </div>
               </form>
               
             </td>
-            <td>
+            <td class="data3">
               <form action="/todo/update" method="POST">
                 <div class="form-item">
                 @csrf
@@ -156,7 +186,7 @@
               </form>
               
             </td>
-            <td>
+            <td class="data3">
               <form action="/todo/delete" method="POST">
                 <div class="form-item">
                 @csrf
