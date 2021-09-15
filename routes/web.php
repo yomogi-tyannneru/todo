@@ -10,6 +10,9 @@ Route::post('/todo/create', [TodoController::class, 'create']);
 //更新
 
 Route::post('/todo/update', [TodoController::class, 'update']);
+Route::get('/todo/update', function () {
+    //
+})->name('/todo/update');
 //削除
 
 Route::post('/todo/delete', [TodoController::class, 'delete']);

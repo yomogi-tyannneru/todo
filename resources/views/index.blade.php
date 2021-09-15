@@ -172,7 +172,7 @@
                 </div>
             </td>
             <td class="data3">
-              <form action="/todo/update" method="POST">
+              <form action="/todo/update" method="POST" >
                 <div class="form-item">
                 @csrf
                 <input type="submit" name="content" value="更新" class="btn1"/>
