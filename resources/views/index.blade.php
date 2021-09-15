@@ -172,11 +172,10 @@
                 </div>
             </td>
             <td class="data3">
-              <form action="/todo/update" method="POST" >
+              <form action="{{ route('/todo/update', ['id' => $item]) }}" method="POST" >
                 <div class="form-item">
                 @csrf
                 <input type="submit" name="content" value="更新" class="btn1"/>
-                <input type="hidden" name="content" value="{{$item->id}}"/>
                 </div>
               </form>
               
