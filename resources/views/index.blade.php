@@ -25,7 +25,6 @@
   .data1 {
     padding: 0px 10px;
     text-align: center;
-    background-color: red;
   }
   .data2 {
     padding: 0px 10px;
@@ -117,7 +116,7 @@
   margin: 20px auto;
 }
 .form-item {
-  padding: 24px 0;
+  padding: 5px 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -168,20 +167,16 @@
               {{$item->created_at}}
             </td>
             <td class="data2">
-              <form action="/todo/update" method="POST">
                 <div class="form-item">
-                @csrf
                 <input type="text" name="content" value="{{$item->content}}" class="form-item-input1">
-                
                 </div>
-              </form>
-              
             </td>
             <td class="data3">
               <form action="/todo/update" method="POST">
                 <div class="form-item">
                 @csrf
                 <input type="submit" name="content" value="更新" class="btn1"/>
+                <input type="hidden" name="content" value="{{$item->id}}"/>
                 </div>
               </form>
               
