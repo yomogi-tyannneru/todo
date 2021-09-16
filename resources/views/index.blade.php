@@ -161,8 +161,9 @@
             <th class="karamu3">更新</th>
             <th class="karamu3">削除</th>
           </tr>
-          @foreach ($items as $item)
+          
           <tr>
+            @foreach ($items as $item)
             <td class="data1">
               {{$item->created_at}}
             </td>
@@ -171,6 +172,7 @@
                 <input type="text" name="content" value="{{$item->content}}" class="form-item-input1">
                 </div>
             </td>
+            @endforeach
             <td class="data3">
               <form action="{{ route('/todo/update', ['id' => $item]) }}" method="POST" >
                 <div class="form-item">
@@ -190,7 +192,7 @@
               
             </td>
           </tr>
-          @endforeach
+          
         </table>
       </div>
     </div>
@@ -206,101 +208,3 @@
 
 
 
-@section('content')
-<form action="/edit" method="POST">
-  <table>
-    @csrf
-    @foreach ($items as $item)
-    <tr>
-      <th>
-        id
-      </th>
-      <td>
-        {{$item->updated_at}}
-      </td>
-    </tr>
-    <tr>
-      <th>
-        name
-      </th>
-      <td>
-        <input type="text" name="content" value="{{$item->content}}">
-      </td>
-    </tr>
-    <tr>
-      <th>
-        age
-      </th>
-      <td>
-        <input type="text" name="created_at" value="{{$item->created_at}}">
-      </td>
-    </tr>
-    <tr>
-      <th>
-        nationality
-      </th>
-      <td>
-        <input type="text" name="updated_at" value="{{$item->updated_at}}">
-      </td>
-    </tr>
-    <tr>
-      <th></th>
-      <td>
-        <button>送信</button>
-      </td>
-    </tr>
-    @endforeach
-  </table>
-</form>
-@endsection
-
-@section('content')
-<form action="/delete" method="POST">
-  <table>
-    @csrf
-    @foreach ($items as $item)
-    <tr>
-      <th>
-        id
-      </th>
-      <td>
-        <input type="text" name="id" value="{{$item->id}}">
-      </td>
-    </tr>
-    <tr>
-      <th>
-        name
-      </th>
-      <td>
-        <input type="text" name="content" value="{{$item->content}}">
-      </td>
-    </tr>
-    <tr>
-      <th>
-        age
-      </th>
-      <td>
-        <input type="text" name="created_at" value="{{$item->created_at}}">
-      </td>
-    </tr>
-    <tr>
-      <th>
-        nationality
-      </th>
-      <td>
-        <input type="text" name="updated_at" value="{{$item->updated_at}}">
-      </td>
-    </tr>
-    <tr>
-      <th></th>
-      <td>
-        <button>送信</button>
-      </td>
-    </tr>
-    @endforeach
-  </table>
-</form>
-@endsection
-</body>
-
-</html>
