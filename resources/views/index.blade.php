@@ -149,7 +149,7 @@
       <form action="/todo/create" method="POST">
         <div class="form-item">
           @csrf
-          <input type="text" name="content" class="form-item-input">
+          <input type="text" name="content" class="form-item-input" maxlength="20" required>
           <input type="submit" value="追加" class="btn"/>
         </div>
       </form>
@@ -171,7 +171,7 @@
             @csrf
             <td class="data2">
                 <div class="form-item">
-                <input type="text" name="content" value="{{$item->content}}"  maxlength="20" class="form-item-input1">
+                <input type="text" name="content" value="{{$item->content}}" maxlength="20" class="form-item-input1">
                 </div>
             </td>
             <td class="data3">
