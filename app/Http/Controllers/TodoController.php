@@ -44,4 +44,10 @@ class TodoController extends Controller
         $item = DB::select('select * from todos where id = :id', $param);
         return view('index', ['form' => $item[0]]);
     }
+    public function remove(Request $request)
+    {
+        $param = ['id' => $request->id];
+        DB::delete('delete from todos where id =:id', $param);
+        return redirect('/');
+    }
 }
