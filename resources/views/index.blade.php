@@ -167,23 +167,20 @@
             <td class="data1">
               {{$item->created_at}}
             </td>
+            <form action="{{ route('/todo/update', ['id' => $item]) }}" method="POST" >
+            @csrf
             <td class="data2">
                 <div class="form-item">
                 <input type="text" name="content" value="{{$item->content}}" class="form-item-input1">
-                <input type="hidden" name="id" value="{{$item->content}}" />
                 </div>
             </td>
-            
             <td class="data3">
-              <form action="{{ route('/todo/update', ['id' => $item]) }}" method="POST" >
                 <div class="form-item">
-                @csrf
                 <input type="submit"  value="更新" class="btn1"/>
-                <input type="hidden" name="id" value="content" />
+                <input type="hidden" name="id" value="{$item->content}}" />
                 </div>
-              </form>
-              
             </td>
+            </form>
             <td class="data3">
               <form action="/todo/delete" method="POST">
                 <div class="form-item">
