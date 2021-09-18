@@ -16,3 +16,6 @@ Route::get('/todo/update', function () {
 //削除
 
 Route::post('/todo/delete', [TodoController::class, 'delete']);
+Route::get('/todo/delete', function () {
+    //
+})->name('/todo/delete');

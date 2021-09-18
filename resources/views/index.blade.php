@@ -177,15 +177,17 @@
             <td class="data3">
                 <div class="form-item">
                 <input type="submit"  value="更新" class="btn1"/>
-                <input type="hidden" name="id" value="{$item->content}}" />
+                <input type="hidden" name="id" value="{{$item->id}}" />
                 </div>
             </td>
             </form>
             <td class="data3">
-              <form action="/todo/delete" method="POST">
-                <div class="form-item">
+              <form action="{{ route('/todo/delete', ['id' => $item]) }}" method="POST" >
                 @csrf
+                <input type="hidden" name="content" value="{{$item->content}}" class="form-item-input1">
+                </div>
                 <input type="submit" name="content" value="削除" class="btn2"/>
+                <input type="hidden" name="id" value="{{$item->id}}" />
                 </div>
               </form>
               
