@@ -25,15 +25,9 @@ class TodoController extends Controller
         return redirect('/');
     }
     //更新
-    public function edit(Request $request)
-    {
-        $param = ['id' => $request->id];
-        $item = DB::select('select * from todos where id = :id', $param);
-        return view('edit', ['form' => $item[0]]);
-    }
+   
     public function update(Request $request)
     {
-        
         $param = [
             'id' => $request->id,
             'content' => $request->content,
@@ -48,12 +42,6 @@ class TodoController extends Controller
     {
         $param = ['id' => $request->id];
         $item = DB::select('select * from todos where id = :id', $param);
-        return view('delete', ['form' => $item[0]]);
-    }
-    public function remove(Request $request)
-    {
-        $param = ['id' => $request->id];
-        DB::delete('delete from todos where id =:id', $param);
-        return redirect('/');
+        return view('index', ['form' => $item[0]]);
     }
 }

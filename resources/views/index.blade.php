@@ -184,6 +184,7 @@
             <td class="data3">
               <form action="{{ route('/todo/delete', ['id' => $item]) }}" method="POST" >
                 @csrf
+                <div class="form-item">
                 <input type="hidden" name="content" value="{{$item->content}}" class="form-item-input1">
                 </div>
                 <input type="submit" name="content" value="削除" class="btn2"/>
