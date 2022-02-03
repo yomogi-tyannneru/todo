@@ -16,6 +16,7 @@ class TodoController extends Controller
     //追加
     public function create(Request $request)
     {
+        $this->validate($request, Todo::$rules);
         $param = [
             'content' => $request->content,
             'created_at' => $request->created_at,
@@ -28,6 +29,7 @@ class TodoController extends Controller
    
     public function update(Request $request)
     {
+        $this->validate($request, Todo::$rules);
         $param = [
             'id' => $request->id,
             'content' => $request->content,

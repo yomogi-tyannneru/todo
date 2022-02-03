@@ -9,12 +9,11 @@
 <title>test</title>
 <style>
   .t{
-    display: flex;
-    justify-content: center;
+    width:90%; 
+    margin: 0 auto; 
   }
   .karamu1 {
     padding: 5px 10px;
-    
   }
   .karamu2 {
     padding: 5px 10px;
@@ -200,6 +199,7 @@
       </div>
     </div>
   </div>
+</body>
 
 
 
